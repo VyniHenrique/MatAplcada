@@ -1,5 +1,5 @@
 import plotly.express as px
-from data.download import download_data
+from data.dowload import download_data
 
 def plot_line_i(ticker:str):
     """ Plot an interactive plot using plotly.
