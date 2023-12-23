@@ -1,4 +1,4 @@
-from data.download import download_data
+from data.dowload import download_data
 from plotnine import (
     ggplot, aes,
     geom_line,
