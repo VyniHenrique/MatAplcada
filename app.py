@@ -1,16 +1,11 @@
-import yfinance as yf
-import pandas as pd
+import streamlit as st
+from plot.interactive import plot_line_i
 
-def download_data(ticker:str) -> pd.DataFrame:
-    """ Download data from Yahoo Finance
+st.title('Stock Price App')
 
-    Args:
-        ticker (str): The ticker of financial asset.
+# Sidebar
+symbol = st.sidebar.text_input('Escolha um ativo', 'AAPL')
 
-    Returns:
-        pd.DataFrame: A dataframe retrieved from Yahoo Finance.
-    """
-    
-    data = yf.download(ticker)
-
-    return data 
+#plot
+fig = plot_line_i (symbol)
+st.plotly_chart(fig)
